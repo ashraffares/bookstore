@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 const BookForm = () => {
   const [title, setTitle] = useState('');
@@ -6,13 +7,22 @@ const BookForm = () => {
 
   const handleChangeTitle = (e) => setTitle(e.target.value);
   const handleChagneCategory = (e) => setCategory(e.target.value);
+  const handleSubmit = () => {
+    useDispatch({
+      type: 'CREATE_BOOK',
+      book: {
+        title,
+        category,
+      },
+    });
+  };
 
   return (
-    <form>
-      <input type="text" onChange={(e) => handleChangeTitle(e)} />
+    <form onSubmit={() => handleSubmit()}>
+      <input type="text" onChange={(e) => handleChangeTitle(e)} value={title} />
       <label htmlFor="category">
         Choose a category:
-        <select name="category" id="category" onChange={(e) => handleChagneCategory(e)}>
+        <select name="category" id="category" onChange={(e) => handleChagneCategory(e)} value={category}>
           <option value="Action">Action</option>
           <option value="Biography">Biography</option>
           <option value="History">History</option>
@@ -25,6 +35,6 @@ const BookForm = () => {
       <button type="submit">Submit</button>
     </form>
   );
-}
+};
 
 export default BookForm;
