@@ -8,7 +8,7 @@ const Book = (book, key) => {
   const { id, title, category } = obj;
   return (
     <tr>
-      <td id={key}>{id}</td>
+      <td className={key}>{id}</td>
       <td>{title}</td>
       <td>{category}</td>
     </tr>
