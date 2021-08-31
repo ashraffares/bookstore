@@ -4,12 +4,15 @@ const BookForm = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
 
+  const handleChangeTitle = (e) => setTitle(e.target.value);
+  const handleChagneCategory = (e) => setCategory(e.target.value);
+
   return (
     <form>
-      <input type="text" />
+      <input type="text" onChange={(e) => handleChangeTitle(e)} />
       <label htmlFor="category">
         Choose a category:
-        <select name="category" id="category">
+        <select name="category" id="category" onChange={(e) => handleChagneCategory(e)}>
           <option value="Action">Action</option>
           <option value="Biography">Biography</option>
           <option value="History">History</option>
