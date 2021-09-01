@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const initialState = [
   {
     id: 1,
@@ -18,10 +19,17 @@ const initialState = [
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'CREATE_BOOK':
-      return [...state, action.book];
+    case 'CREATE_BOOK': {
+      return [...state, action.obj];
+    }
     case 'REMOVE_BOOK':
-      return state.filter((book) => book.id !== action.book.id);
+      return state.filter((book) => {
+        console.log('start log');
+        console.log(`bookid: ${book.id}`);
+        console.log(`action: ${action.obj.id}`);
+        console.log('end log');
+        return book.id !== action.obj.id;
+      });
     default: return state;
   }
 };

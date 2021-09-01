@@ -1,24 +1,17 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { CREATE_BOOK } from '../../actions/index';
+import store from '../../reducers/index';
 
 const BookForm = () => {
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState('Action');
+  const [id, setId] = useState(4);
 
   const handleChangeTitle = (e) => setTitle(e.target.value);
   const handleChagneCategory = (e) => setCategory(e.target.value);
-  const handleSubmit = () => {
-    useDispatch({
-      type: 'CREATE_BOOK',
-      book: {
-        title,
-        category,
-      },
-    });
-  };
 
   return (
-    <form onSubmit={() => handleSubmit()}>
+    <div>
       <input type="text" onChange={(e) => handleChangeTitle(e)} value={title} />
       <label htmlFor="category">
         Choose a category:
@@ -32,8 +25,16 @@ const BookForm = () => {
           <option value="Sci-Fi">Sci-Fi</option>
         </select>
       </label>
-      <button type="submit">Submit</button>
-    </form>
+      <button
+        type="submit"
+        onClick={() => {
+          store.dispatch(CREATE_BOOK({ id, title, category }));
+          setId(id + 1);
+        }}
+      >
+        Submit
+      </button>
+    </div>
   );
 };
 
