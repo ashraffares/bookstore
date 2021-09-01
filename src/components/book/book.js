@@ -1,7 +1,9 @@
 import propTypes from 'prop-types';
+import { REMOVE_BOOK } from '../../actions';
+import store from '../../reducers';
 
 const Book = (props) => {
-  const { obj, button } = props;
+  const { obj } = props;
   const { id, title, category } = obj;
 
   return (
@@ -9,7 +11,11 @@ const Book = (props) => {
       <td>{id}</td>
       <td>{title}</td>
       <td>{category}</td>
-      <td>{button}</td>
+      <td>
+        <button type="button" onClick={() => store.dispatch(REMOVE_BOOK(obj))}>
+          Remove Book
+        </button>
+      </td>
     </tr>
   );
 };
@@ -19,12 +25,6 @@ Book.propTypes = {
     id: propTypes.number,
     title: propTypes.string,
     category: propTypes.string,
-  }).isRequired,
-};
-
-Book.propTypes = {
-  button: propTypes.shape({
-    type: propTypes.string,
   }).isRequired,
 };
 
