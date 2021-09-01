@@ -1,18 +1,19 @@
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import propTypes from 'prop-types';
 import { REMOVE_BOOK } from '../../actions';
-import store from '../../reducers';
 
 const Book = (props) => {
   const { obj } = props;
   const { id, title, category } = obj;
-
+  const dispatch = useDispatch();
   return (
     <tr key={id}>
       <td>{id}</td>
       <td>{title}</td>
       <td>{category}</td>
       <td>
-        <button type="button" onClick={() => store.dispatch(REMOVE_BOOK(obj))}>
+        <button type="button" onClick={() => dispatch(REMOVE_BOOK(obj))}>
           Remove Book
         </button>
       </td>

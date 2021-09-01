@@ -1,7 +1,7 @@
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { CREATE_BOOK } from '../../actions/index';
-import store from '../../reducers/index';
 
 const BookForm = () => {
   const [title, setTitle] = useState('');
@@ -9,6 +9,8 @@ const BookForm = () => {
 
   const handleChangeTitle = (e) => setTitle(e.target.value);
   const handleChagneCategory = (e) => setCategory(e.target.value);
+
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -28,7 +30,7 @@ const BookForm = () => {
       <button
         type="submit"
         onClick={() => {
-          store.dispatch(CREATE_BOOK({ id: uuidv4(), title, category }));
+          dispatch(CREATE_BOOK({ id: uuidv4(), title, category }));
         }}
       >
         Submit
