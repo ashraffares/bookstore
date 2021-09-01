@@ -17,10 +17,7 @@ const BooksList = () => {
       <tbody>
         {
           Books.map((book) => (
-            <>
-              <Book obj={book} key={book.id} />
-              <button type="button" id={book.id} onClick={() => store.dispatch(REMOVE_BOOK(book))}>Remove Book</button>
-            </>
+            <Book key={book.id} obj={book} button={<button type="button" onClick={() => store.dispatch(REMOVE_BOOK(book))}>Remove Book</button>} />
           ))
         }
       </tbody>

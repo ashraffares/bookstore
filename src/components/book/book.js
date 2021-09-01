@@ -1,15 +1,15 @@
-/* eslint-disable no-console */
 import propTypes from 'prop-types';
 
 const Book = (props) => {
-  const { obj } = props;
+  const { obj, button } = props;
   const { id, title, category } = obj;
-  console.log(obj);
+
   return (
-    <tr>
+    <tr key={id}>
       <td>{id}</td>
       <td>{title}</td>
       <td>{category}</td>
+      <td>{button}</td>
     </tr>
   );
 };
@@ -21,4 +21,11 @@ Book.propTypes = {
     category: propTypes.string,
   }).isRequired,
 };
+
+Book.propTypes = {
+  button: propTypes.shape({
+    type: propTypes.string,
+  }).isRequired,
+};
+
 export default Book;
