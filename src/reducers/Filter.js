@@ -1,9 +1,10 @@
-const intialState = 'All';
+import { filterState } from './initialState';
 
-const filterReducer = (state = intialState, action) => {
+const filterReducer = (state = filterState, action) => {
   switch (action.type) {
-    case 'CHANGE_FILTER':
-      return state.filter((book) => book.category === action.filterby);
+    case 'CHANGE_FILTER': {
+      return action.filterby;
+    }
     default: return state;
   }
 };
