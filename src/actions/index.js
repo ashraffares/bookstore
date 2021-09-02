@@ -8,7 +8,7 @@ export const RemoveBook = (obj) => ({
   obj,
 });
 
-export const ChangeFilter = (obj) => ({
+export const ChangeFilter = (filterby) => ({
   type: 'CHANGE_FILTER',
-  obj,
+  filterby,
 });
