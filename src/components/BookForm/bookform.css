@@ -1,0 +1,10 @@
+.form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: #0290ff;
+  color: #fff;
+}
