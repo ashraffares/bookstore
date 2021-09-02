@@ -1,5 +1,5 @@
 import BooksList from '../BooksList';
-import BooksForm from '../../components/BookForm';
+import BooksForm from '../BookForm';
 
 const App = () => (
   <div>
