@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Book from '../book/index';
 import CategoryFilter from '../CategoryFilter/CategoryFilter';
+import './booklist.css';
 
 const BooksList = () => {
   const [Books, setBooks] = useState([]);
@@ -15,7 +16,7 @@ const BooksList = () => {
   return (
     <>
       <CategoryFilter />
-      <table>
+      <table className="table">
         <tbody>
           { filter === 'All' ? Books.map((book) => (<Book key={book.id} obj={book} />)) : Books.filter((book) => filter === book.category).map((book) => (<Book key={book.id} obj={book} />))}
         </tbody>
