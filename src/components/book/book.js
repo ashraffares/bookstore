@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import propTypes from 'prop-types';
 import { RemoveBook } from '../../actions';
+import progress from './progress.png';
 import './book.css';
 
 const Book = (props) => {
@@ -21,7 +22,7 @@ const Book = (props) => {
       </div>
       <div className="flexRow ui_continer">
         <div className="flexRow">
-          <div className="Oval-2" />
+          <img src={progress} alt="progress" className="img" />
           <div className="flexColumn">
             <span className="percent-Complete">64%</span>
             <span className="completed">completed</span>
