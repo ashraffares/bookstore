@@ -10,25 +10,28 @@ const Book = (props) => {
   const dispatch = useDispatch();
   return (
     <tr key={id} className="card">
-      <div className="cardContent">
-        <td>{category}</td>
-        <td>{title}</td>
+      <div className="flexColumn">
+        <td className="category">{category}</td>
+        <td className="title">{title}</td>
         <td>
-          <button type="button" onClick={() => dispatch(RemoveBook(obj))}>
-            Remove Book
+          <button className="Remove" type="button" onClick={() => dispatch(RemoveBook(obj))}>
+            Remove
           </button>
         </td>
       </div>
-      <div className="flexRow">
+      <div className="flexRow ui_continer">
         <div className="flexRow">
           <div className="Oval-2" />
           <div className="flexColumn">
-            <span>64%</span>
-            <span>completed</span>
+            <span className="percent-Complete">64%</span>
+            <span className="completed">completed</span>
           </div>
         </div>
-        <div>
-          button
+        <div className="border" />
+        <div className="flexColumn">
+          <span className="Current-Chapter ">CURRENT CHAPTER</span>
+          <span className="Current-Lesson">Chapter 17</span>
+          <button className="Rectangle-2" type="button">UPDATE PROGRESS</button>
         </div>
       </div>
     </tr>
