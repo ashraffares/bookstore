@@ -15,9 +15,9 @@ const BookForm = () => {
 
   return (
     <div className="form">
-      <input type="text" onChange={(e) => handleChangeTitle(e)} value={title} placeholder="Book Title" />
+      <input className="input" type="text" onChange={(e) => handleChangeTitle(e)} value={title} placeholder="Book Title" />
       <label htmlFor="category">
-        <select name="category" id="category" onChange={(e) => handleChagneCategory(e)} value={category}>
+        <select className="select" name="category" id="category" onChange={(e) => handleChagneCategory(e)} value={category}>
           <option value="Action" selected disabled hidden>Category</option>
           <option value="Action">Action</option>
           <option value="Biography">Biography</option>
