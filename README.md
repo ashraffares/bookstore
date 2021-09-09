@@ -1,5 +1,5 @@
 ## BookStore App
-"BookStore App"
+"BookStore App" is the front-end of an application that organizes and manage books in bookstore.
 
 ## Built With
 - JavaScript
@@ -8,6 +8,7 @@
 - Webpack
 - React
 - Redux
+- Jsx
 
 ## Live link
  [BookStore App](https://bookstore090.herokuapp.com/).
