@@ -14,9 +14,15 @@ const Book = (props) => {
       <div className="flexColumn">
         <td className="category">{category}</td>
         <td className="title">{title}</td>
-        <td>
-          <button className="Remove" type="button" onClick={() => dispatch(RemoveBook(obj))}>
+        <td className="actionsContainer">
+          <button className="actionsbtn" type="button">
+            Comment
+          </button>
+          <button className="middle" type="button" onClick={() => dispatch(RemoveBook(obj))}>
             Remove
+          </button>
+          <button className="actionsbtn" type="button">
+            Edit
           </button>
         </td>
       </div>
