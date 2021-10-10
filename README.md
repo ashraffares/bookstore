@@ -1,3 +1,5 @@
+![React App (2)](https://user-images.githubusercontent.com/37639594/136702986-eecd42be-5a8f-4884-acce-40e42019590f.png)
+
 ## BookStore App
 "BookStore App" is the front-end of an application that organizes and manage books in bookstore.
 
